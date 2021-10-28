@@ -56,7 +56,7 @@ def generate_noise_event_stream(timesteps, noise_bounds):
 
 # generate hardcoded S-shape - this is the reason that RESOLUTION should be set to 32,
 # as I haven't implemented the calculations to dynamically adjust the size of the S-shape
-def generate_sony_event_stream(timesteps):
+def generate_signal_event_stream(timesteps):
 	all_events = []
 	#define all event positions
 	positions = [(i, 8) for i in range(8, 24)] + \
@@ -190,9 +190,9 @@ def run(args):
 
 	# generate, aggregate and filter event streams
 	t0 = time.time()
-	sony_event_stream = generate_sony_event_stream(args.timesteps)
+	signal_event_stream = generate_signal_event_stream(args.timesteps)
 	noise_event_stream = generate_noise_event_stream(args.timesteps, args.noise_bounds)
-	combined_event_stream = combine_streams(sony_event_stream, noise_event_stream)
+	combined_event_stream = combine_streams(signal_event_stream, noise_event_stream)
 	filtered_event_stream = filter_noise_events(combined_event_stream)
 	print("time to generate all event streams: {}s".format(round(time.time() - t0, 3)))
 
@@ -200,7 +200,7 @@ def run(args):
 	input('press enter when ready to start')
 
 	# order of streams in lists determines where they appear in the display
-	streams = [noise_event_stream, sony_event_stream, combined_event_stream, filtered_event_stream]
+	streams = [noise_event_stream, signal_event_stream, combined_event_stream, filtered_event_stream]
 
 	for timestep, event_streams in enumerate(zip(*streams)):
 		t0 = time.time()

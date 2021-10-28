@@ -2,6 +2,13 @@
 
 Toy project for testing background activity event filter. Based on Tkinter, the only dependency is numpy.
 
+A demonstration is shown in demo.mp4. Note that the outputs are as follows:
+
+- top left: noise event stream
+- top right: Signal (S) stream
+- bottom left: combined stream
+- bottom right: combined stream with noise filter applied.
+
 ## Running
 
 Run the following source file:
