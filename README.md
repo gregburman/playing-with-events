@@ -1,6 +1,6 @@
 # Playing With Events
 
-Toy project for testing background activity event filter. Based on Tkinter and other core libraries, so no project dependencies required.
+Toy project for testing background activity event filter. Based on Tkinter, the only dependency is numpy.
 
 ## Running
 
