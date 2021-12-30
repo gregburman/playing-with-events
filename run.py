@@ -1,6 +1,6 @@
 import argparse
 import itertools
-import numpy as np
+# import numpy as np
 import time
 import tkinter
 import random
@@ -88,7 +88,8 @@ def combine_streams(stream_a, stream_b):
 def filter_noise_events(event_stream):
 
 	def create_buffer(event_stream, t):
-		buff = np.zeros([RESOLUTION, RESOLUTION], dtype=np.int8)
+		# buff = np.zeros([RESOLUTION, RESOLUTION], dtype=np.int8)
+		buff = [[0]*RESOLUTION for i in range(RESOLUTION)]
 		for event in event_stream[t]:
 			buff[event.y][event.x] = event.p
 		return buff

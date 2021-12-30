@@ -9,12 +9,20 @@ A demonstration is shown in demo.mp4. Note that the outputs are as follows:
 - bottom left: combined stream
 - bottom right: combined stream with noise filter applied.
 
+## Installation
+
+The only requirement is `tkinter`. It comes pre-installed on most systems, however if it's missing on your system you can install it with your package manager, e.g. on Arch Linux:
+
+```
+sudo pacman -S tk
+```
+
 ## Running
 
 Run the following source file:
 
 ```
-run.py --timesteps <timesteps> --framerate <framerate> --noise-bounds <lower-bound> <upper-bound> --hide-grid-outline
+python run.py --timesteps <timesteps> --framerate <framerate> --noise-bounds <lower-bound> <upper-bound> --hide-grid-outline
 ```
 
 where
